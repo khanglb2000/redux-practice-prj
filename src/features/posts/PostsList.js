@@ -7,6 +7,7 @@ import {
 } from "./postSlice";
 import { useEffect } from "react";
 import PostsExcerpt from "./PostsExcerpt";
+import { nanoid } from "@reduxjs/toolkit";
 
 const PostsList = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const PostsList = () => {
       .slice()
       .sort((a, b) => b.date.localeCompare(a.date));
     content = orderedPosts.map((post) => (
-      <PostsExcerpt key={post.id} post={post} />
+      <PostsExcerpt key={post.id + nanoid()} post={post} />
     ));
   } else if (postStatus === "failed") {
     content = <p>{error}</p>;
