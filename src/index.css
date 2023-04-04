@@ -59,6 +59,10 @@ nav a:focus {
   text-decoration: underline;
 }
 
+a {
+  text-decoration: none;
+}
+
 main {
   max-width: 500px;
   margin: auto;
