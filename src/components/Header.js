@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -37,28 +38,28 @@ const Header = () => {
             </div>
             <ul className="MENU-LINK-MOBILE-OPEN flex flex-col align-top justify-between min-h-[250px] font-bold mt-10">
               <li className="border-b border-gray-400 my-8 uppercase">
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="text-green-700 visited:text-green-500 visited:no-underline"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li className="border-b border-gray-400 my-8 uppercase">
-                <a
-                  href="post"
+                <Link
+                  to="post"
                   className="text-green-700 visited:text-green-500 visited:no-underline"
                 >
                   Create Post
-                </a>
+                </Link>
               </li>
               <li className="border-b border-gray-400 my-8 uppercase">
-                <a
-                  href="user"
+                <Link
+                  to="user"
                   className="text-green-700 visited:text-green-500 visited:no-underline"
                 >
                   User
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -66,13 +67,13 @@ const Header = () => {
 
         <ul className="DESKTOP-MENU hidden space-x-4 lg:flex">
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="post">Create Post</a>
+            <Link to="post">Create Post</Link>
           </li>
           <li>
-            <a href="user">Users</a>
+            <Link to="user">Users</Link>
           </li>
         </ul>
       </nav>
