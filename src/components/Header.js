@@ -46,7 +46,7 @@ const Header = () => {
               </li>
               <li className="border-b border-gray-400 my-8 uppercase">
                 <a
-                  href="/post"
+                  href="post"
                   className="text-green-700 visited:text-green-500 visited:no-underline"
                 >
                   Create Post
@@ -54,7 +54,7 @@ const Header = () => {
               </li>
               <li className="border-b border-gray-400 my-8 uppercase">
                 <a
-                  href="/user"
+                  href="user"
                   className="text-green-700 visited:text-green-500 visited:no-underline"
                 >
                   User
@@ -69,10 +69,10 @@ const Header = () => {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/post">Create Post</a>
+            <a href="post">Create Post</a>
           </li>
           <li>
-            <a href="/user">Users</a>
+            <a href="user">Users</a>
           </li>
         </ul>
       </nav>

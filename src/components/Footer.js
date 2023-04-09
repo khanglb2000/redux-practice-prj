@@ -18,7 +18,7 @@ const Footer = () => {
           <a href="/" class="hover:opacity-90">
             Home
           </a>
-          <a href="/user" class="hover:opacity-90">
+          <a href="user" class="hover:opacity-90">
             User
           </a>
           <a
