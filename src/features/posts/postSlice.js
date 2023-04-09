@@ -86,11 +86,15 @@ const postsSlice = createSlice({
         const loadedPosts = action.payload.map((post) => {
           post.date = sub(new Date(), { minutes: min++ }).toISOString();
           post.reactions = {
-            thumbsUp: 0,
-            wow: 0,
-            heart: 0,
-            rocket: 0,
-            coffee: 0,
+            thumbsUp: "0",
+            thumbsDown: "0",
+            smile: "0",
+            haha: "0",
+            wow: "0",
+            fear: "0",
+            angry: "0",
+            sad: "0",
+            heart: "0",
           };
           return post;
         });
@@ -114,11 +118,15 @@ const postsSlice = createSlice({
         action.payload.userId = Number(action.payload.userId);
         action.payload.date = new Date().toISOString();
         action.payload.reactions = {
-          thumbsUp: 0,
-          wow: 0,
-          heart: 0,
-          rocket: 0,
-          coffee: 0,
+          thumbsUp: "0",
+          thumbsDown: "0",
+          smile: "0",
+          haha: "0",
+          wow: "0",
+          fear: "0",
+          angry: "0",
+          sad: "0",
+          heart: "0",
         };
         console.log(action.payload);
         postsAdapter.addOne(state, action.payload);

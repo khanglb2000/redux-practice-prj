@@ -3,10 +3,14 @@ import { reactionAdded } from "./postSlice";
 
 const reactionEmoji = {
   thumbsUp: "👍",
+  thumbsDown: "👎",
+  smile: "😄",
+  haha: "🤣",
   wow: "😮",
+  fear: "😨",
+  angry: "😡",
+  sad: "😢",
   heart: "❤️",
-  rocket: "🚀",
-  coffee: "☕",
 };
 
 const ReactionButtons = ({ post }) => {
@@ -27,6 +31,6 @@ const ReactionButtons = ({ post }) => {
     );
   });
 
-  return <div>{reactionButtons}</div>;
+  return <div className="flex justify-center">{reactionButtons}</div>;
 };
 export default ReactionButtons;

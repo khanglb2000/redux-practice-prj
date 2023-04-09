@@ -6,7 +6,7 @@ const UsersList = () => {
   const users = useSelector(selectAllUsers);
 
   const renderedUsers = users.map((user) => (
-    <li key={user.id}>
+    <li key={user.id} className="hover:opacity-90 hover:underline">
       <Link to={`/user/${user.id}`}>
         {user.firstName + " " + user.lastName}
       </Link>
@@ -15,9 +15,9 @@ const UsersList = () => {
 
   return (
     <section>
-      <h2>Users</h2>
+      <h2 className="text-4xl text-green-700 font-bold">Users</h2>
 
-      <ul>{renderedUsers}</ul>
+      <ul className="list-decimal">{renderedUsers}</ul>
     </section>
   );
 };

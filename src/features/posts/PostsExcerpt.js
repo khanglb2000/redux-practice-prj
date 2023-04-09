@@ -11,7 +11,7 @@ const PostsExcerpt = ({ postId }) => {
 
   return (
     <article>
-      <h2>{post.title}</h2>
+      <h2 className="text-4xl text-green-700 font-bold">{post.title}</h2>
       <p className="excerpt">{post.body.substring(0, 75)}...</p>
       <p className="postCredit">
         <Link to={`post/${post.id}`}>View Post</Link>

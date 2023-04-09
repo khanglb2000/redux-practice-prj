@@ -84,7 +84,7 @@ const EditPostForm = () => {
 
   return (
     <section>
-      <h2>Edit Post</h2>
+      <h2 className="text-4xl text-green-700 font-bold">Edit Post</h2>
       <form>
         <label htmlFor="postTitle">Post Title:</label>
         <input
@@ -92,10 +92,16 @@ const EditPostForm = () => {
           id="postTitle"
           name="postTitle"
           value={title}
+          className="border-4 border-green-700 rounded"
           onChange={onTitleChanged}
         />
         <label htmlFor="postAuthor">Author:</label>
-        <select id="postAuthor" value={userId} onChange={onAuthorChanged}>
+        <select
+          id="postAuthor"
+          value={userId}
+          onChange={onAuthorChanged}
+          className="border-4 border-green-700 rounded"
+        >
           <option value=""></option>
           {usersOptions}
         </select>
@@ -104,15 +110,21 @@ const EditPostForm = () => {
           id="postContent"
           name="postContent"
           value={content}
+          className="border-4 border-green-700 rounded"
           onChange={onContentChanged}
         />
-        <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
+        <button
+          type="button"
+          onClick={onSavePostClicked}
+          disabled={!canSave}
+          className="rounded-full bg-green-700 text-white border-2 border-green-700 hover:opacity-90 hover:font-semibold"
+        >
           Save Post
         </button>
         <button
-          className="deleteButton"
           type="button"
           onClick={onDeletePostClicked}
+          className="rounded-full bg-white text-green-700 border-2 border-green-700 hover:opacity-90 hover:font-semibold"
         >
           Delete Post
         </button>

@@ -19,9 +19,11 @@ const UserPage = () => {
 
   return (
     <section>
-      <h2>{user.firstName + " " + user.lastName}</h2>
+      <h2 className="text-4xl text-green-700 font-bold">
+        {user.firstName + " " + user.lastName}
+      </h2>
 
-      <ol>{postTitles}</ol>
+      <ul className="list-decimal">{postTitles}</ul>
     </section>
   );
 };
