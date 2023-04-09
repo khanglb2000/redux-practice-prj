@@ -1,13 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const USERS_URL = "https://jsonplaceholder.typicode.com/users";
+const USERS_URL = "https://dummyjson.com/users";
 
 const initialState = [];
 
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
   const response = await axios.get(USERS_URL);
-  return response.data;
+  console.log(response);
+  return response.data.users;
 });
 
 const usersSlice = createSlice({

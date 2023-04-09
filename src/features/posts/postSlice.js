@@ -7,7 +7,7 @@ import {
 import { sub } from "date-fns";
 import axios from "axios";
 
-const POSTS_URL = "https://jsonplaceholder.typicode.com/posts";
+const POSTS_URL = "https://dummyjson.com/posts";
 
 const postsAdapter = createEntityAdapter({
   sortComparer: (a, b) => b.date.localeCompare(a.date),
@@ -21,13 +21,13 @@ const initialState = postsAdapter.getInitialState({
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
   const response = await axios.get(POSTS_URL);
-  return response.data;
+  return response.data.posts;
 });
 
 export const addNewPost = createAsyncThunk(
   "posts/addNewPost",
   async (initialPost) => {
-    const response = await axios.post(POSTS_URL, initialPost);
+    const response = await axios.post(`${POSTS_URL}/add`, initialPost);
     return response.data;
   }
 );
