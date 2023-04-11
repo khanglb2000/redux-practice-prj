@@ -8,7 +8,7 @@ const Header = () => {
     <header className="Header opacity-95 flex flex-row justify-between items-center">
       <h1 className="font-bold text-4xl md:text-6xl">💭 Redux Blog</h1>
       <nav>
-        <section className="MOBILE-MENU flex lg:hidden">
+        <section className="MOBILE-MENU flex lg:hidden pb-5">
           <div
             className="HAMBURGER-ICON space-y-2"
             onClick={() => setIsNavOpen((prev) => !prev)} // toggle isNavOpen state on click
@@ -40,6 +40,7 @@ const Header = () => {
               <li className="border-b border-gray-400 my-8 uppercase">
                 <Link
                   to="/"
+                  onClick={() => setIsNavOpen(false)}
                   className="text-green-700 visited:text-green-500 visited:no-underline"
                 >
                   Home
@@ -48,6 +49,7 @@ const Header = () => {
               <li className="border-b border-gray-400 my-8 uppercase">
                 <Link
                   to="post"
+                  onClick={() => setIsNavOpen(false)}
                   className="text-green-700 visited:text-green-500 visited:no-underline"
                 >
                   Create Post
@@ -56,6 +58,7 @@ const Header = () => {
               <li className="border-b border-gray-400 my-8 uppercase">
                 <Link
                   to="user"
+                  onClick={() => setIsNavOpen(false)}
                   className="text-green-700 visited:text-green-500 visited:no-underline"
                 >
                   User
