@@ -24,6 +24,17 @@ export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
   return response.data.posts;
 });
 
+export const fetchMorePosts = createAsyncThunk(
+  "posts/fetchMorePosts",
+  async (limit, skip) => {
+    console.log("api: Skip: ", skip, ", Limit: ", limit);
+    const response = await axios.get(
+      `${POSTS_URL}?limit=${limit}&skip=${skip}`
+    );
+    return response.data.posts;
+  }
+);
+
 export const addNewPost = createAsyncThunk(
   "posts/addNewPost",
   async (initialPost) => {
@@ -36,8 +47,6 @@ export const updatePost = createAsyncThunk(
   "posts/updatePost",
   async (initialPost) => {
     const { id } = initialPost;
-    // try-catch block only for development/testing with fake API
-    // otherwise, remove try-catch and add updatePost.rejected case
     try {
       const response = await axios.put(`${POSTS_URL}/${id}`, initialPost);
       return response.data;
@@ -105,6 +114,29 @@ const postsSlice = createSlice({
       .addCase(fetchPosts.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
+      })
+      .addCase(fetchMorePosts.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        // Adding date and reactions
+        let min = 1;
+        const loadedPosts = action.payload.map((post) => {
+          post.date = sub(new Date(), { minutes: min++ }).toISOString();
+          post.reactions = {
+            thumbsUp: "0",
+            thumbsDown: "0",
+            smile: "0",
+            haha: "0",
+            wow: "0",
+            fear: "0",
+            angry: "0",
+            sad: "0",
+            heart: "0",
+          };
+          return post;
+        });
+
+        // Add any fetched posts to the array
+        postsAdapter.upsertMany(state, loadedPosts);
       })
       .addCase(addNewPost.fulfilled, (state, action) => {
         // Fix for API post IDs:

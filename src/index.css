@@ -69,8 +69,17 @@ a {
 }
 
 main {
-  max-width: 500px;
+  min-width: 300px;
+  max-width: 60vw;
   margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    min-width: 300px;
+    max-width: 100vw;
+    margin: auto;
+  }
 }
 
 section {

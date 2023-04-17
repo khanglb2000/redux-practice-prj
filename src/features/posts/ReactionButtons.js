@@ -31,6 +31,6 @@ const ReactionButtons = ({ post }) => {
     );
   });
 
-  return <div className="flex justify-center">{reactionButtons}</div>;
+  return <div className="flex flex-wrap justify-center">{reactionButtons}</div>;
 };
 export default ReactionButtons;

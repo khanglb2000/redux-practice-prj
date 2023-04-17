@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { IoHomeSharp } from "react-icons/io5";
+import { BiAddToQueue } from "react-icons/bi";
+import { FaUserEdit } from "react-icons/fa";
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -41,8 +44,9 @@ const Header = () => {
                 <Link
                   to="/"
                   onClick={() => setIsNavOpen(false)}
-                  className="text-green-700 visited:text-green-500 visited:no-underline"
+                  className="text-green-700 visited:text-green-500 visited:no-underline flex items-center"
                 >
+                  <IoHomeSharp className="mr-2" />
                   Home
                 </Link>
               </li>
@@ -50,8 +54,9 @@ const Header = () => {
                 <Link
                   to="post"
                   onClick={() => setIsNavOpen(false)}
-                  className="text-green-700 visited:text-green-500 visited:no-underline"
+                  className="text-green-700 visited:text-green-500 visited:no-underline flex items-center"
                 >
+                  <BiAddToQueue className="mr-2" />
                   Create Post
                 </Link>
               </li>
@@ -59,8 +64,9 @@ const Header = () => {
                 <Link
                   to="user"
                   onClick={() => setIsNavOpen(false)}
-                  className="text-green-700 visited:text-green-500 visited:no-underline"
+                  className="text-green-700 visited:text-green-500 visited:no-underline flex items-center"
                 >
+                  <FaUserEdit className="mr-2" />
                   User
                 </Link>
               </li>
